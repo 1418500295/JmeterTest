@@ -1,0 +1,20 @@
+server:
+  port: 9080
+
+logging:
+  path: logs
+  file: daine.log
+spring:
+  application:
+    name: daine
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT
+    username: root
+    password: 123456
+
+mybatis:
+  mapper-locations:
+    - mapper/*
+  type-aliases-package: com.course.model
+
