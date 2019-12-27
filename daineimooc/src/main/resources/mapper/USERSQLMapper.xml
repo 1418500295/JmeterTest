@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.daineimooc.dao.UserDao">
+    <select id="getAll" resultType="com.example.demo.daineimooc.entity.User">
+        select * from User;
+
+    </select>
+    <select id="selectUser" parameterType="Integer" resultType="com.example.demo.daineimooc.entity.User">
+        select * from User
+        where id=#{id};
+    </select>
+    <insert id="insertUser" parameterType="com.example.demo.daineimooc.entity.User">
+        insert into User (id,userName,password,age,sex,permission,isDelete)
+        values (#{id},#{userName},#{password},#{age},#{sex},#{permission},#{isDelete})
+    </insert>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete from User
+        where id=#{id}
+    </delete>
+
+    <update id="updateUser" parameterType="com.example.demo.daineimooc.entity.User">
+        update User
+        set id =#{id},userName=#{userName}
+        where id=#{id}
+    </update>
+
+
+</mapper>
