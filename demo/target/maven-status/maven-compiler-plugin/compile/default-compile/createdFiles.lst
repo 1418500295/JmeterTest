@@ -1,4 +1,6 @@
+com\demo\Fourth.class
 com\demo\First.class
+com\kafka\KafkaProduceMsg.class
 com\demo\Second.class
 com\demo\Third.class
 com\functions\Plus.class

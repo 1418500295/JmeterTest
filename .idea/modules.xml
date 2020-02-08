@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JmeterTest.iml" filepath="$PROJECT_DIR$/.idea/JmeterTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daineimooc/daineimooc.iml" filepath="$PROJECT_DIR$/daineimooc/daineimooc.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooctest/imooctest.iml" filepath="$PROJECT_DIR$/imooctest/imooctest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/operatefile/operatefile.iml" filepath="$PROJECT_DIR$/operatefile/operatefile.iml" />
       <module fileurl="file://$PROJECT_DIR$/springbootdemo/springbootdemo.iml" filepath="$PROJECT_DIR$/springbootdemo/springbootdemo.iml" />
     </modules>
   </component>

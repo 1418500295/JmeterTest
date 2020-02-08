@@ -25,7 +25,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("daine service Api")
+        return new ApiInfoBuilder().title("daineFirst service Api")
                 .contact(new Contact("daine","","daine0513@gmail.com"))
                 .description("this is daine service api")
                 .version("1.0")
