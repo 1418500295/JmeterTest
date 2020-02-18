@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="daineimooc" />
+        <module name="demo" />
         <module name="operatefile" />
         <module name="imooctest" />
-        <module name="demo" />
+        <module name="daineimooc" />
         <module name="springbootdemo" />
+        <module name="Okhttp1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,10 +19,12 @@
       <module name="demo" target="1.5" />
       <module name="imooctest" target="1.8" />
       <module name="mytest" target="1.5" />
+      <module name="Okhttp1" target="6" />
       <module name="operatefile" target="1.5" />
       <module name="springboot-imooc" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="springbootdemo" target="8" />
+      <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

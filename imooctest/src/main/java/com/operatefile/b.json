@@ -1,5 +1,12 @@
-{
-  "name": "daine",
-  "age": "12",
-  "sex": "male"
-}
+[
+  {
+    "name": "daine",
+    "age": "12",
+    "sex": "male"
+  },
+  {
+    "name": "james",
+    "height": 185,
+    "weight": 130
+  }
+]

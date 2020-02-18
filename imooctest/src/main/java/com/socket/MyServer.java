@@ -10,7 +10,7 @@ import java.net.Socket;
 public class MyServer {
     public static void main(String[] args) throws IOException {
         //监听指定的端口
-        int port = 5533;
+        int port = 5531;
         ServerSocket serverSocket = new ServerSocket(port);
         System.out.println("server一直等待连接的到来");
         Socket socket = serverSocket.accept();
