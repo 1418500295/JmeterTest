@@ -28,6 +28,23 @@ public class GetDemo {
     }
 
     @Test
+    public void setCookie() throws IOException {
+        OkHttpClient okHttpClient = new OkHttpClient();
+        String url = "http://localhost:8889/get/with/cookies";
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("Cookie","login=true")
+                .get()
+                .build();
+
+        Response response = okHttpClient.newCall(request).execute();
+        String result = response.body().string();
+        System.out.println(result);
+    }
+
+
+
+    @Test
     public void getCookie() throws IOException {
         OkHttpClient client = new OkHttpClient();
         String url = "http://localhost:8889/getCookies";
