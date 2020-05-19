@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="测试">
+    <test name="demo">
+        <classes>
+            <class name="com.httpclient1.DemoTest"/>
+        </classes>
+    </test>
+</suite>

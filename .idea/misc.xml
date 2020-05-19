@@ -12,6 +12,9 @@
         <option value="$PROJECT_DIR$/operatefile/pom.xml" />
         <option value="$PROJECT_DIR$/imooctest/pom.xml" />
         <option value="$PROJECT_DIR$/Okhttp1/pom.xml" />
+        <option value="$PROJECT_DIR$/Mockito1/pom.xml" />
+        <option value="$PROJECT_DIR$/Iocimooc/pom.xml" />
+        <option value="$PROJECT_DIR$/Thread1/pom.xml" />
       </list>
     </option>
   </component>

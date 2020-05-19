@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="ExternalSystem" externalSystem="Maven" />
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -11,9 +17,7 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJmeter_java:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_core:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJmeter_core:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJmeter_java:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:jorphan:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_components:3.2" level="project" />
@@ -180,5 +184,12 @@
     <orderEntry type="library" name="Maven: logkit:logkit:2.0" level="project" />
     <orderEntry type="library" name="Maven: soap:soap:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-nop:1.7.5" level="project" />
+    <orderEntry type="library" name="Maven: javax.websocket:javax.websocket-api:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.2.2.RELEASE" level="project" />
   </component>
 </module>

@@ -6,24 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springbootdemo" />
+        <module name="Mockito1" />
         <module name="demo" />
-        <module name="operatefile" />
+        <module name="Thread1" />
+        <module name="Okhttp1" />
         <module name="imooctest" />
         <module name="daineimooc" />
-        <module name="springbootdemo" />
-        <module name="Okhttp1" />
+        <module name="Iocimooc" />
+        <module name="operatefile" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="daineimooc" target="1.8" />
-      <module name="demo" target="1.5" />
+      <module name="demo" target="1.8" />
       <module name="imooctest" target="1.8" />
+      <module name="Iocimooc" target="1.6" />
+      <module name="IocTest" target="1.6" />
+      <module name="Mockito1" target="8" />
+      <module name="mockserver" target="1.5" />
       <module name="mytest" target="1.5" />
-      <module name="Okhttp1" target="6" />
-      <module name="operatefile" target="1.5" />
+      <module name="nodes" target="1.5" />
+      <module name="Okhttp1" target="1.8" />
+      <module name="operatefile" target="1.8" />
+      <module name="restTemplate" target="1.5" />
+      <module name="retrofit" target="1.5" />
+      <module name="retrofit1" target="1.5" />
       <module name="springboot-imooc" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="springbootdemo" target="8" />
+      <module name="Thread1" target="1.8" />
       <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>

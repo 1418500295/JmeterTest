@@ -1,6 +1,7 @@
 public class First {
 
-    public void getMyInfo(){
-        
+    public int add(int a, int b){
+        return a + b;
+
     }
 }

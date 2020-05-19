@@ -1,3 +1,5 @@
+package com;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -14,8 +16,8 @@ import static java.lang.String.*;
 
 public class Demo {
     public static void main(String[] args) throws IOException {
-//        String path = "C:\\Users\\ASUS\\JmeterTest\\Okhttp1\\src\\main\\java\\a.json";
-        String path = System.getProperty("user.dir") + "/Okhttp1/src/main/java/a.json";
+        String path = "C:\\Users\\ASUS\\JmeterTest\\Okhttp1\\src\\main\\java\\a.json";
+//        String path = System.getProperty("user.dir") + "/Okhttp1/src/main/java/a.json";
         FileInputStream inputStream = new FileInputStream(path);
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         StringBuilder stringBuilder = new StringBuilder();
@@ -39,6 +41,9 @@ public class Demo {
         Map<String,String> map = new HashMap<>();
         map.put("name","james");
         map.put("age","11");
+
+
+
 
 
 
