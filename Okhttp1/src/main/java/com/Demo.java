@@ -38,6 +38,7 @@ public class Demo {
         jsonObject1.addProperty("sala","1000");
         System.out.println(jsonObject1);
 
+
         Map<String,String> map = new HashMap<>();
         map.put("name","james");
         map.put("age","11");

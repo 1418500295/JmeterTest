@@ -12,7 +12,7 @@ public class IocTest {
         AnnotationConfigApplicationContext ioc = new
                 AnnotationConfigApplicationContext(Config.class);
         Hello hello = (Hello) ioc.getBean("hello");
-        System.out.println(hello.getSex());
+        System.out.println(hello.getName());
 
 
     }

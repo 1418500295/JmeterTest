@@ -5,6 +5,7 @@ import com.example.demo.daineimooc.entity.User;
 import com.example.demo.daineimooc.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+@Slf4j
 @RestController
 @Api(value = "/v1",tags = "CURD")
 @RequestMapping(value = "/test")
@@ -32,6 +33,8 @@ public class UserController {
     @ApiOperation(value = "获取所有数据",httpMethod = "GET")
     public List<User> getAll(){
         return userService.getAll();
+
+
     }
 
     /**
