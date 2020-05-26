@@ -22,7 +22,7 @@ import java.util.Objects;
 public class DaineApi {
 
     @Autowired
-    private SqlSessionTemplate sqlSessionTemplate;
+    SqlSessionTemplate sqlSessionTemplate;
 
     @ApiOperation(value = "登录接口",httpMethod = "POST")
     @RequestMapping(value = "/v2/login",method = RequestMethod.POST)

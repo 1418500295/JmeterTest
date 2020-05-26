@@ -10,11 +10,12 @@
         <module name="Mockito1" />
         <module name="demo" />
         <module name="Thread1" />
-        <module name="Okhttp1" />
         <module name="imooctest" />
         <module name="daineimooc" />
-        <module name="Iocimooc" />
         <module name="operatefile" />
+        <module name="RetrofitTest" />
+        <module name="Iocimooc" />
+        <module name="Okhttp1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -32,6 +33,7 @@
       <module name="restTemplate" target="1.5" />
       <module name="retrofit" target="1.5" />
       <module name="retrofit1" target="1.5" />
+      <module name="RetrofitTest" target="1.8" />
       <module name="springboot-imooc" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="springbootdemo" target="8" />

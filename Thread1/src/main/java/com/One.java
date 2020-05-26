@@ -21,6 +21,13 @@ public class One {
         System.out.println(file.isDirectory());
         //获取其父目录的路径
         System.out.println(file.getParent());
+        System.out.println(String.format("年龄是%d",12));
+        System.out.printf("收入是%s",12);
+        System.out.format("%s","哈哈");
+
+
+
+
 
 
 
