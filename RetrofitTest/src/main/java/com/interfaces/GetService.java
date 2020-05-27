@@ -20,4 +20,6 @@ public interface GetService {
     @POST("/postDemo")
     @Headers({"content-type:application/json"})
     Call<ResponseBody> postJson(@Body JSONObject jsonObject);
+
+
 }

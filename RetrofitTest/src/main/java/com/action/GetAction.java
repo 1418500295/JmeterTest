@@ -28,4 +28,5 @@ public class GetAction implements GetService {
     public Call<ResponseBody> postJson(JSONObject jsonObject) {
         return getService.postJson(jsonObject);
     }
+
 }
