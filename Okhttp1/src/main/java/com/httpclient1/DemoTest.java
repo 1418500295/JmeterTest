@@ -1,15 +1,22 @@
 package com.httpclient1;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.CookieStore;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.NavigableMap;
 
 public class DemoTest {
     private CookieStore cookieStore;
@@ -59,6 +66,21 @@ public class DemoTest {
 //        client.setCookieStore(cookieStore);
         get.setHeader("Cookie","login=true;base=localhost");
         HttpResponse response = client.execute(get);
+        String result = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println(result);
+
+    }
+
+    @Test
+    public void jsonGet() throws IOException {
+        DefaultHttpClient defaultHttpClient = new DefaultHttpClient();
+        List<NameValuePair> list = new ArrayList<>();
+        list.add(new BasicNameValuePair("weight","174"));
+        list.add(new BasicNameValuePair("height","185"));
+        String params = EntityUtils.toString(new UrlEncodedFormEntity(list),"utf-8");
+        HttpGet get = new HttpGet("http://localhost:8889/v1/getFirst"+"?"+params);
+        get.setHeader("content-type","application/json");
+        HttpResponse response = defaultHttpClient.execute(get);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
 

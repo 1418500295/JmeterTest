@@ -10,22 +10,26 @@
         <module name="Mockito1" />
         <module name="demo" />
         <module name="Thread1" />
+        <module name="Okhttp1" />
         <module name="imooctest" />
         <module name="daineimooc" />
-        <module name="operatefile" />
+        <module name="HttpUrlConnects" />
         <module name="RetrofitTest" />
         <module name="Iocimooc" />
-        <module name="Okhttp1" />
+        <module name="operatefile" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="daineimooc" target="1.8" />
       <module name="demo" target="1.8" />
+      <module name="first" target="1.8" />
+      <module name="HttpUrlConnects" target="1.8" />
       <module name="imooctest" target="1.8" />
       <module name="Iocimooc" target="1.6" />
       <module name="IocTest" target="1.6" />
       <module name="Mockito1" target="8" />
       <module name="mockserver" target="1.5" />
+      <module name="mocoUnit" target="1.8" />
       <module name="mytest" target="1.5" />
       <module name="nodes" target="1.5" />
       <module name="Okhttp1" target="1.8" />
@@ -44,6 +48,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="daineimooc" options="-parameters" />
+      <module name="first" options="-parameters" />
       <module name="springboot-imooc" options="-parameters" />
       <module name="springboot-mybatis" options="" />
       <module name="springbootdemo" options="" />

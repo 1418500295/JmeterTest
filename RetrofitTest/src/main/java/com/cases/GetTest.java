@@ -5,26 +5,22 @@ import com.config.DataUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.ResponseBody;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.internal.thread.ThreadUtil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 public class GetTest {
 
-    private GetAction getAction = new GetAction();
+    private  static GetAction getAction = new GetAction();
 
 
     @Test
-    public void test() throws IOException {
+    public void test() throws IOException, InterruptedException {
 
         Call<ResponseBody> call = getAction.getInfo(DataUtil.getTestData("getdemo.json",0));
         Response<ResponseBody> responseBodyResponse = call.execute();
@@ -33,31 +29,31 @@ public class GetTest {
             result = responseBodyResponse.body().string();
         }
         System.out.println(result);
-        log.info("实际结果是{}",result);
 
     }
     //异步请求
     @Test
-    public void test05() throws IOException {
+    public  void test05() throws IOException {
 
-        Call<ResponseBody> call = getAction.getInfo(DataUtil.getTestData("postsecond.json",0));
+        Call<ResponseBody> call = getAction.postInfo(DataUtil.getTestData("postsecond.json",0));
         call.enqueue(new Callback<ResponseBody>() {
-            @SneakyThrows
-            @Override
+            @Override //成功时调用
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.body() != null){
+                try {
                     System.out.println(response.body().string());
-                }
+//                    call.cancel();
 
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
-            @Override
+            @Override //失败时调用
             public void onFailure(Call<ResponseBody> call, Throwable throwable) {
-                System.out.println(throwable.getMessage());
+                log.info("请求失败");
 
             }
         });
-
 
     }
 
@@ -69,9 +65,7 @@ public class GetTest {
             System.out.println(response.body().string());
         }
 
-
     }
-
 
 
     @Test
@@ -84,9 +78,6 @@ public class GetTest {
         }
         System.out.println(result);
     }
-
-
-
 
 
 }

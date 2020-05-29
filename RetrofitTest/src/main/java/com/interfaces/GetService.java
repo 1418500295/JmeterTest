@@ -3,6 +3,7 @@ package com.interfaces;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.JsonObject;
 import okhttp3.ResponseBody;
+import org.springframework.stereotype.Component;
 import retrofit2.Call;
 import retrofit2.http.*;
 
