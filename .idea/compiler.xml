@@ -10,12 +10,12 @@
         <module name="Mockito1" />
         <module name="demo" />
         <module name="Thread1" />
-        <module name="Okhttp1" />
         <module name="imooctest" />
         <module name="daineimooc" />
         <module name="HttpUrlConnects" />
         <module name="RetrofitTest" />
         <module name="Iocimooc" />
+        <module name="Okhttp1" />
         <module name="operatefile" />
       </profile>
     </annotationProcessing>
@@ -47,6 +47,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="HttpUrlConnects" options="-parameters" />
       <module name="daineimooc" options="-parameters" />
       <module name="first" options="-parameters" />
       <module name="springboot-imooc" options="-parameters" />

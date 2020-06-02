@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.config.RetrofitConfig;
 import com.interfaces.GetService;
 import okhttp3.ResponseBody;
+import org.springframework.stereotype.Component;
 import retrofit2.Call;
 
 public class GetAction implements GetService {
