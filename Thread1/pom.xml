@@ -25,10 +25,7 @@
             <version>6.14.3</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId></groupId>
-            <artifactId>ja</artifactId>
-        </dependency>
+
     </dependencies>
 
 

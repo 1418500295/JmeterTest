@@ -1,12 +1,11 @@
 package com;
 
+import com.google.gson.Gson;
+
 public class Two {
     public static void main(String[] args) {
-        String s = "哈哈";
-        if (s.isEmpty()){
-            System.out.println("1");
-        }else {
-            System.out.println("2");
-        }
+        Gson gson = new Gson();
+
+
     }
 }

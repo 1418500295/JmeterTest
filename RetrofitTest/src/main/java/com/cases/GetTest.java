@@ -1,6 +1,8 @@
 package com.cases;
 
 import com.action.GetAction;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.config.DataUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +13,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import java.io.IOException;
+import java.net.CookieStore;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -75,8 +78,23 @@ public class GetTest {
         String result = null;
         if (response.body() != null){
             result = response.body().string();
+
         }
         System.out.println(result);
+    }
+    @Test
+    public void getCookies() throws IOException {
+        Call<ResponseBody> call = getAction.getCookies();
+        Response<ResponseBody> response = call.execute();
+        System.out.println(response.raw().header("Set-Cookie"));
+        System.out.println(response.body().string());
+    }
+
+    @Test
+    public void setCookies() throws IOException {
+        Call<ResponseBody> call = getAction.setCookies();
+        Response<ResponseBody> response = call.execute();
+        System.out.println(response.body().string());
     }
 
 

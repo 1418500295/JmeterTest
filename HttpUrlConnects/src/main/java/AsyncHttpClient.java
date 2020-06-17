@@ -1,6 +1,5 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import lombok.Cleanup;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
@@ -14,16 +13,12 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.nio.protocol.HttpAsyncRequestProducer;
-import org.apache.http.nio.protocol.HttpAsyncResponseConsumer;
-import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Future;
+
 
 
 public class AsyncHttpClient {
@@ -59,11 +54,7 @@ public class AsyncHttpClient {
             }
         });
 
-
-
     }
-
-
 
     //同步请求
     @Test
@@ -77,6 +68,7 @@ public class AsyncHttpClient {
         HttpResponse response = closeableHttpClient.execute(get);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
+
     }
     @Test
     public void test1() throws IOException {
@@ -92,6 +84,12 @@ public class AsyncHttpClient {
         HttpResponse response = closeableHttpClient.execute(post);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
+        JSONObject jsonObject = JSON.parseObject(result);
+//        Assert.isTrue(result.contains("2"),"测试失败");
+        ResultAssertUtil.equals(jsonObject.get("status"),"1");
+
+
+
 
 
 

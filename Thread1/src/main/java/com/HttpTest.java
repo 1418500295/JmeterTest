@@ -42,6 +42,7 @@ public class HttpTest implements Runnable {
         System.out.println(ok);
 
     }
+    @Test
     public void request() throws IOException {
         DefaultHttpClient client = new DefaultHttpClient();
         HttpGet get = new HttpGet("http://localhost:8889/v1/getDemo?name=daine&age=26");
@@ -53,6 +54,8 @@ public class HttpTest implements Runnable {
         if (jsonObject.get("info").getAsString().equals("success")){
             ok+=1;
         }
+
+
 
 
     }

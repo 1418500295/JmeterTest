@@ -1,9 +1,5 @@
 package com.defineanotion;
 
-
-import jdk.nashorn.internal.objects.annotations.Property;
-
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 

@@ -11,6 +11,13 @@ import java.util.Map;
 
 public interface GetService {
 
+    @GET("/getCookies")
+    Call<ResponseBody> getCookies();
+
+    @GET("/get/with/cookies")
+    @Headers({"Cookie:login=true"})
+    Call<ResponseBody> setCookies();
+
     @GET("/v1/getDemo")
     Call<ResponseBody> getInfo(@QueryMap JSONObject jsonObject);
 

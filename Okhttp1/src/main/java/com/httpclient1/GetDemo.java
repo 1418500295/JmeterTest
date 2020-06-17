@@ -41,7 +41,7 @@ public class GetDemo {
         HttpResponse response = client.execute(get);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
-        cookieStore = client.getCookieStore();
+        CookieStore cookieStore = client.getCookieStore();
         List<Cookie> cookies = cookieStore.getCookies();
         for (Cookie cookie:cookies){
             System.out.println(cookie.getName()+"\n"+cookie.getValue());
