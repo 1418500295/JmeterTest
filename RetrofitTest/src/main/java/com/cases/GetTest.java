@@ -100,8 +100,7 @@ public class GetTest {
 
     }
 
-    public void haha(){
-        System.out.println("哈哈");
-
+    public void vv(){
+        System.out.println("vv");
     }
 }
