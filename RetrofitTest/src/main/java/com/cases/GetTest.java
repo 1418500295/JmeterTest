@@ -97,7 +97,7 @@ public class GetTest {
         Response<ResponseBody> response = call.execute();
         System.out.println(response.body().string());
 
-        System.out.println("dsada");
+
 
     }
 
