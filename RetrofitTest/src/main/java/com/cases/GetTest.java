@@ -96,11 +96,10 @@ public class GetTest {
         Call<ResponseBody> call = getAction.setCookies();
         Response<ResponseBody> response = call.execute();
         System.out.println(response.body().string());
+        System.out.println("hello");
     }
 
-    public void lu(){
-        System.out.println("123");
-    }
+
 
 
 
