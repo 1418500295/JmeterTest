@@ -98,9 +98,7 @@ public class GetTest {
         System.out.println(response.body().string());
     }
 
-    public void daine(){
-        System.out.println("daine");
-    }
+ 
 
 
 
