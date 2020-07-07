@@ -37,4 +37,9 @@ public class GetAction implements GetService {
         return getService.postJson(jsonObject);
     }
 
+    @Override
+    public Call<ResponseBody> login(JSONObject jsonObject, JSONObject jsonObject1) {
+        return getService.login(jsonObject,jsonObject1);
+    }
+
 }

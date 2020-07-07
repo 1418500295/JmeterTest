@@ -29,5 +29,12 @@ public interface GetService {
     @Headers({"content-type:application/json"})
     Call<ResponseBody> postJson(@Body JSONObject jsonObject);
 
+    @POST("/v1/login")
+    @FormUrlEncoded
+    Call<ResponseBody> login(@FieldMap JSONObject jsonObject,
+                             @HeaderMap JSONObject jsonObject1);
+
+
+
 
 }

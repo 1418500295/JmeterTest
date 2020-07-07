@@ -33,6 +33,7 @@ public class GetTest {
         }
         System.out.println(result);
 
+
     }
     //异步请求
     @Test
@@ -96,6 +97,8 @@ public class GetTest {
         Response<ResponseBody> response = call.execute();
         System.out.println(response.body().string());
     }
+
+
 
 
 }

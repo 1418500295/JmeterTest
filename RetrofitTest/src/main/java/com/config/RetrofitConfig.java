@@ -18,13 +18,22 @@ public class RetrofitConfig {
 
     public static Retrofit retrofitConfig() {
              Retrofit retrofit =  new Retrofit.Builder()
-                    .baseUrl("http://localhost:8889")
-//                     .baseUrl(RetrofitConfig.getHost())
+//                    .baseUrl("https://vapi.sskk168.com")
+                     .baseUrl(RetrofitConfig.getHost().replaceAll("\"",""))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
              return retrofit;
 
         }
+
+    public static void main(String[] args) {
+        String s = RetrofitConfig.getHost();
+        System.out.println(s+s.length()+s.getClass());
+        String a = "https://vapi.sskk168.com";
+        System.out.println(a+a.length()+a.getClass());
+        System.out.println(s.equals("https://vapi.sskk168.com"));
+
+    }
 
 
 
