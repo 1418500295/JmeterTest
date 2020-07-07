@@ -99,7 +99,7 @@ public class GetTest {
     }
 
     public void lu(){
-        System.out.println("lu");
+        System.out.println("123");
     }
 
 
