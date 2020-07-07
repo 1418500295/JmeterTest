@@ -98,6 +98,10 @@ public class GetTest {
         System.out.println(response.body().string());
     }
 
+    public void lu(){
+        System.out.println("lu");
+    }
+
 
 
 
