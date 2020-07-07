@@ -96,13 +96,12 @@ public class GetTest {
         Call<ResponseBody> call = getAction.setCookies();
         Response<ResponseBody> response = call.execute();
         System.out.println(response.body().string());
+
+
     }
 
     public void haha(){
         System.out.println("哈哈");
+
     }
-
-
-
-
 }
