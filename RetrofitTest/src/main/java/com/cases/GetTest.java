@@ -4,9 +4,11 @@ import com.action.GetAction;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.config.DataUtil;
+import com.utils.BeanContainerUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.ResponseBody;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.internal.thread.ThreadUtil;
 import retrofit2.Call;
@@ -14,52 +16,55 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import java.io.IOException;
 import java.net.CookieStore;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+
 
 @Slf4j
 public class GetTest {
 
-    private  static GetAction getAction = new GetAction();
+//    private  static GetAction getAction = new GetAction();
+    private GetAction getAction = BeanContainerUtil.getBean(GetAction.class);
 
 
     @Test
     public void test() throws IOException, InterruptedException {
 
+
         Call<ResponseBody> call = getAction.getInfo(DataUtil.getTestData("getdemo.json",0));
-        Response<ResponseBody> responseBodyResponse = call.execute();
-        String result = null;
-        if (responseBodyResponse.body() != null) {
-            result = responseBodyResponse.body().string();
+        Response<ResponseBody> response = call.execute();
+        if (response.body() != null) {
+            Assert.assertTrue(response.body().string().contains("\"info\":\"success\""));
         }
-        System.out.println(result);
-
-
     }
+
+
+
     //异步请求
-    @Test
-    public  void test05() throws IOException {
-
-        Call<ResponseBody> call = getAction.postInfo(DataUtil.getTestData("postsecond.json",0));
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override //成功时调用
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                try {
-                    System.out.println(response.body().string());
-//                    call.cancel();
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override //失败时调用
-            public void onFailure(Call<ResponseBody> call, Throwable throwable) {
-                log.info("请求失败");
-
-            }
-        });
-
-    }
+//    @Test
+//    public  void test05() throws IOException {
+//
+//        Call<ResponseBody> call = getAction.postInfo(DataUtil.getTestData("postsecond.json",0));
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override //成功时调用
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                try {
+//                    System.out.println(response.body().string());
+////                    call.cancel();
+//
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override //失败时调用
+//            public void onFailure(Call<ResponseBody> call, Throwable throwable) {
+//                log.info("请求失败");
+//
+//            }
+//        });
+//
+//    }
 
     @Test
     public void test01() throws IOException {
@@ -83,6 +88,8 @@ public class GetTest {
         }
         System.out.println(result);
     }
+
+
     @Test
     public void getCookies() throws IOException {
         Call<ResponseBody> call = getAction.getCookies();
@@ -90,6 +97,7 @@ public class GetTest {
         System.out.println(response.raw().header("Set-Cookie"));
         System.out.println(response.body().string());
     }
+
 
     @Test
     public void setCookies() throws IOException {
@@ -100,7 +108,5 @@ public class GetTest {
 
     }
 
-    public void vv(){
-        System.out.println("vv");
-    }
+
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="ApiSuite" duration-ms="93" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+    <groups>
+    </groups>
+    <test name="mock测试" duration-ms="93" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+      <class name="com.cases.GetTest">
+        <test-method status="PASS" signature="getCookies()[pri:0, instance:com.cases.GetTest@1755e85b]" name="getCookies" duration-ms="27" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCookies -->
+        <test-method status="PASS" signature="setCookies()[pri:0, instance:com.cases.GetTest@1755e85b]" name="setCookies" duration-ms="2" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setCookies -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.cases.GetTest@1755e85b]" name="test" duration-ms="34" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test01()[pri:0, instance:com.cases.GetTest@1755e85b]" name="test01" duration-ms="5" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01 -->
+        <test-method status="PASS" signature="test02()[pri:0, instance:com.cases.GetTest@1755e85b]" name="test02" duration-ms="5" started-at="2020-08-10T15:50:42 GST" finished-at="2020-08-10T15:50:42 GST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test02 -->
+      </class> <!-- com.cases.GetTest -->
+    </test> <!-- mock测试 -->
+  </suite> <!-- ApiSuite -->
+</testng-results>

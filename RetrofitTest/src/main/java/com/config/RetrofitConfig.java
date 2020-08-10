@@ -12,16 +12,18 @@ public class RetrofitConfig {
     private static ResourceBundle resourceBundle = ResourceBundle
         .getBundle("hosts", Locale.CHINA);
 
+
     public static String getHost(){
         return  resourceBundle.getString("host");
     }
 
+
     public static Retrofit retrofitConfig() {
+
              Retrofit retrofit =  new Retrofit.Builder()
-//                    .baseUrl("https://vapi.sskk168.com")
-                     .baseUrl(RetrofitConfig.getHost().replaceAll("\"",""))
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+                     .baseUrl(RetrofitConfig.getHost())
+                     .addConverterFactory(GsonConverterFactory.create())
+                     .build();
              return retrofit;
 
         }
@@ -29,9 +31,9 @@ public class RetrofitConfig {
     public static void main(String[] args) {
         String s = RetrofitConfig.getHost();
         System.out.println(s+s.length()+s.getClass());
-        String a = "https://vapi.sskk168.com";
+        String a = "http://localhost:8889";
         System.out.println(a+a.length()+a.getClass());
-        System.out.println(s.equals("https://vapi.sskk168.com"));
+        System.out.println(s.equals(a));
 
     }
 
