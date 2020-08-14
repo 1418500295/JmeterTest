@@ -12,6 +12,7 @@
         <module name="Thread1" />
         <module name="imooctest" />
         <module name="daineimooc" />
+        <module name="spring1" />
         <module name="HttpUrlConnects" />
         <module name="RetrofitTest" />
         <module name="Iocimooc" />
@@ -38,6 +39,7 @@
       <module name="retrofit" target="1.5" />
       <module name="retrofit1" target="1.5" />
       <module name="RetrofitTest" target="1.8" />
+      <module name="spring1" target="1.8" />
       <module name="springboot-imooc" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="springbootdemo" target="8" />

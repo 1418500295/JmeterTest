@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="ApiSuite">
+    <test name="mock测试">
+<!--        <classes>-->
+<!--            <class name="com.cases.GetTest"/>-->
+<!--        </classes>-->
+        <packages>
+            <package name="com.cases"/>
+        </packages>
+
+    </test>
+
+    <listeners>
+        <listener class-name="com.config.ExtentTestNgIReporterListener"/>
+    </listeners>
+</suite>

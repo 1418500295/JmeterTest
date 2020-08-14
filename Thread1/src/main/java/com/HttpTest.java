@@ -28,7 +28,7 @@ public class HttpTest implements Runnable {
     public void run() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
-        while (num < 7000) {
+        while (num < 100) {
             try {
                 this.request();
             } catch (IOException e) {

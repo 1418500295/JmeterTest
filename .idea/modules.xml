@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/imooctest/imooctest.iml" filepath="$PROJECT_DIR$/imooctest/imooctest.iml" />
       <module fileurl="file://$PROJECT_DIR$/operatefile/operatefile.iml" filepath="$PROJECT_DIR$/operatefile/operatefile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring1/spring1.iml" filepath="$PROJECT_DIR$/spring1/spring1.iml" />
       <module fileurl="file://$PROJECT_DIR$/springbootdemo/springbootdemo.iml" filepath="$PROJECT_DIR$/springbootdemo/springbootdemo.iml" />
     </modules>
   </component>

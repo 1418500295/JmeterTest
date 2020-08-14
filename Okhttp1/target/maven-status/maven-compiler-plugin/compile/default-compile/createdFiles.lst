@@ -1,7 +1,12 @@
-com\httpclient1\Num.class
-com\GetDemo.class
+com\defineanotion\Demo.class
 com\PostDemo.class
+com\Demo1.class
 com\Demo.class
-com\httpclient1\DemoTest.class
 com\httpclient1\GetDemo.class
 com\GetDemo$1.class
+com\httpclient1\Num.class
+com\GetDemo.class
+com\httpclient1\NewHttpClient.class
+com\httpclient1\PatchTest.class
+com\defineanotion\Person.class
+com\httpclient1\DemoTest.class
