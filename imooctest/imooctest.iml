@@ -19,6 +19,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_core:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJmeter_java:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJmeter_java:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:jorphan:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_components:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.2" level="project" />
