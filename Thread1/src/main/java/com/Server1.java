@@ -20,6 +20,9 @@ public class Server1 extends WebSocketServer {
         System.out.println("来自新的客户端连接:"+webSocket.getRemoteSocketAddress()
         .getAddress().getHostAddress()+":"+webSocket.getRemoteSocketAddress()
         .getPort());
+        int count = 0;
+        count += 1;
+        System.out.println(count);
 
     }
 

@@ -36,7 +36,7 @@ public class Client1 extends WebSocketClient {
 
     }
 
-    public static void main(String[] args) {
+    public  void doIt() {
         Client1 client1 = null;
         try {
             client1  = new Client1(new URI("ws://localhost:1423"),new Draft_6455());
