@@ -10,6 +10,7 @@
         <module name="Mockito1" />
         <module name="demo" />
         <module name="Thread1" />
+        <module name="freemarkerplugin" />
         <module name="imooctest" />
         <module name="daineimooc" />
         <module name="spring1" />
@@ -24,6 +25,7 @@
       <module name="daineimooc" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="first" target="1.8" />
+      <module name="freemarkerplugin" target="1.8" />
       <module name="HttpUrlConnects" target="1.8" />
       <module name="imooctest" target="1.8" />
       <module name="Iocimooc" target="1.6" />

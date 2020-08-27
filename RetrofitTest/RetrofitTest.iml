@@ -58,6 +58,8 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.netflix.feign:feign-core:8.18.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.jvnet:animal-sniffer-annotation:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.relevantcodes:extentreports:2.41.1" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.8.11.1" level="project" />

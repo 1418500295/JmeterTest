@@ -2,6 +2,7 @@ package com.interfaces;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.JsonObject;
+import feign.RequestLine;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.*;
@@ -9,6 +10,7 @@ import retrofit2.http.*;
 import java.util.Map;
 
 public interface GetService {
+
 
     @GET("/getCookies")
     Call<ResponseBody> getCookies();

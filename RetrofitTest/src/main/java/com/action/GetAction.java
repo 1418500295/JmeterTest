@@ -3,6 +3,8 @@ package com.action;
 import com.alibaba.fastjson.JSONObject;
 import com.config.RetrofitConfig;
 import com.interfaces.GetService;
+import feign.Feign;
+import feign.gson.GsonDecoder;
 import okhttp3.ResponseBody;
 import org.springframework.stereotype.Service;
 import retrofit2.Call;
@@ -12,7 +14,6 @@ public class GetAction implements GetService {
 
 
     private GetService getService = RetrofitConfig.retrofitConfig().create(GetService.class);
-
 
     @Override
     public Call<ResponseBody> getCookies() {
