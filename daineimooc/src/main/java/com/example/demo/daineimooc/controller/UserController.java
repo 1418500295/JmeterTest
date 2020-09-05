@@ -44,7 +44,7 @@ public class UserController {
      */
     @RequestMapping(value = "/selectUser",method = RequestMethod.GET)
     @ApiOperation(value = "查询某条数据",httpMethod = "GET")
-    public User selectUser(@RequestParam Integer id){
+    public List<User> selectUser(@RequestParam Integer id){
         return userService.selectUser(id);
     }
 

@@ -1,0 +1,18 @@
+
+V	java:S125#"<This block of commented-out lines of code should be removed.(ßºÖ“şÿÿÿÿ
+V	java:S125%"<This block of commented-out lines of code should be removed.(È²˜ÿÿÿÿÿ
+S	java:S106O"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ
+S	java:S106W"9Replace this use of System.out or System.err by a logger.(ŠÌ’úşÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(²ûÛÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(õßş¨üÿÿÿÿ
+S	java:S106X"9Replace this use of System.out or System.err by a logger.(õßş¨üÿÿÿÿ
+S	java:S106@"9Replace this use of System.out or System.err by a logger.(õßş¨üÿÿÿÿ
+Q	java:S125-"<This block of commented-out lines of code should be removed.(ö®˜ï
+S	java:S106`"9Replace this use of System.out or System.err by a logger.(õßş¨üÿÿÿÿ
+’
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(Ì’ûÂüÿÿÿÿ
+V	java:S1256"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+P	java:S125("<This block of commented-out lines of code should be removed.(ËÍ5
+V	java:S1259"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+V	java:S1253"<This block of commented-out lines of code should be removed.(í“òşüÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Ö†¯ëşÿÿÿÿ

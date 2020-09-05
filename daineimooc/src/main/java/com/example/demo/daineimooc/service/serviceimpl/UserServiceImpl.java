@@ -5,7 +5,6 @@ import com.example.demo.daineimooc.entity.User;
 import com.example.demo.daineimooc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User selectUser(Integer id) {
+    public List<User> selectUser(Integer id) {
         return userDao.selectUser(id);
     }
 

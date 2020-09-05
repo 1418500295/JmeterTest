@@ -33,14 +33,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_java:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJmeter_java:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:ApacheJMeter_core:2.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jmeter:jorphan:2.10" level="project" />
     <orderEntry type="library" name="Maven: bsf:bsf:2.4.0" level="project" />

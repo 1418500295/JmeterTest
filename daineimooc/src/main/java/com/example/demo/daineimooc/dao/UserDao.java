@@ -22,14 +22,14 @@ public interface UserDao {
      * @param id
      * @return
      */
-    User selectUser(Integer id);
+    List<User> selectUser(Integer id);
 
     /**
      * 插入数据
      * @param user
      * @return
      */
-    int   insertUser(User user);
+    int  insertUser(User user);
 
     /**
      * 删除某条数据

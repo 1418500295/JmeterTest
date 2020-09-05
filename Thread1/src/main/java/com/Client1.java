@@ -27,7 +27,6 @@ public class Client1 extends WebSocketClient {
 
     @Override
     public void onClose(int i, String s, boolean b) {
-        System.out.println("关闭连接");
 
     }
 
@@ -60,6 +59,5 @@ public class Client1 extends WebSocketClient {
             e.printStackTrace();
         }
         client1.close();
-
     }
 }

@@ -35,6 +35,7 @@ public class DaineApi {
             log.info("查询到的结果是"+i);
             return true;
         }
+        log.info("查询到的结果是"+i);
         return false;
 
     }
