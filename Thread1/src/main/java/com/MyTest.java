@@ -21,7 +21,7 @@ public class MyTest implements Runnable {
 
     public void start(){
         Thread t = null;
-        for (int i=0;i<100;i++){
+        for (int i=0;i<10;i++){
             t = new Thread(new MyTest());
             t.start();
         }
