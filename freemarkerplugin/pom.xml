@@ -7,6 +7,8 @@
     <groupId>org.example</groupId>
     <artifactId>freemarkerplugin</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>maven-plugin</packaging>
+
 
     <build>
         <plugins>
