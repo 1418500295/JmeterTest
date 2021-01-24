@@ -26,17 +26,22 @@ public class Demo3 {
         }
         //开始时间
         long sTime = System.currentTimeMillis();
-        System.out.println("开始时间"+(format.format(sTime)));
-        latch.countDown();  //  准备开始！！！
-        try {
-            countDownLatch.await();  //阻塞主线程，等待子线程创建完毕,所有线程并发请求
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //结束时间
+        System.out.println("开始时间" + sTime);
+        latch.countDown();
+        countDownLatch.await();
         long eTime = System.currentTimeMillis();
-        System.out.println("结束时间"+(format.format(eTime)));
-        System.out.println("总耗时: "+(float)(eTime - sTime)/1000+"秒");
+        System.out.println("结束时间: " + eTime);
+//        System.out.println("总耗时: " + (float) (eTime - sTime) / 1000 + "秒");
+        System.out.println("最小响应时间: "+(Float.parseFloat(Collections.min(PayTest.list1)))/1000+"秒");
+        System.out.println("最大响应时间: "+ (Float.parseFloat(Collections.max(PayTest.list1)))/1000+"秒");
+        int sum = 0;
+        for (int i = 0;i<PayTest.list1.size();i++){
+            sum+=Integer.parseInt(PayTest.list1.get(i));
+        }
+        System.out.println("平均响应时间: "+(float)(sum/PayTest.list1.size())/1000+"秒");
+        System.out.println("QPS: "+(num/((float)(sum/PayTest.list1.size())/1000)));
+        System.out.println("成功的数量: "+PayTest.success);
+        System.out.println("失败的数量: "+(num-PayTest.success));
         executorService.shutdown(); //关闭线程池，停止接受新任务，原来的任务继续执行
     }
     public static void main(String[] args) {
