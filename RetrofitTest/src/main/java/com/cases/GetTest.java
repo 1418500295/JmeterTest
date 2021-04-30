@@ -10,6 +10,15 @@ import retrofit2.Call;
 import retrofit2.Response;
 import java.io.IOException;
 
+创建base基类，所有测试类都需要继承base
+// import org.springframework.test.context.ContextConfiguration;
+// import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+
+// @ContextConfiguration(locations = "classpath:applicationContext.xml")
+// public class Base extends AbstractTestNGSpringContextTests {
+
+// }
+
 
 @Slf4j
 public class GetTest {
