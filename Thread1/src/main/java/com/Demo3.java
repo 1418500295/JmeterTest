@@ -38,6 +38,18 @@ public class Demo3 {
         for (int i = 0;i<PayTest.list1.size();i++){
             sum+=Integer.parseInt(PayTest.list1.get(i));
         }
+        //按从小到大排序
+        Collections.sort(PayTest.list1);
+        List<String> list = new ArrayList<>();
+        //获取百分之90用户响应时间
+        for (int i = 0; i < PayTest.list1.size()*0.9; i++) {
+            list.add(PayTest.list1.get(i));
+        }
+        int sum1 = 0;
+        for (int i = 0; i < list.size(); i++) {
+            sum1 += Integer.parseInt(list.get(i));
+        }
+        System.out.printf("百分之90用户响应时间：%.3f秒\n",(float)(sum1/list.size())/1000);
         System.out.println("平均响应时间: "+(float)(sum/PayTest.list1.size())/1000+"秒");
         System.out.println("QPS: "+(num/((float)(sum/PayTest.list1.size())/1000)));
         System.out.println("成功的数量: "+PayTest.success);
