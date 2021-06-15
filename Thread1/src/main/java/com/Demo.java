@@ -10,6 +10,23 @@ public class Demo {
     static {
         System.out.println("这是静态代码块");
     }
+    //饱汉模式线程安全单例模式
+    private volatile static CloseableHttpClient client;
+
+
+    public static CloseableHttpClient getInstance(){
+        if (client == null){
+            synchronized (PayTest.class){
+                if (client == null){
+                    PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+                    client = HttpClients.custom()
+                    .setConnectionManager(cm)
+                    .build();
+                }
+            }
+        }
+        return client;
+    }
 
     {
         System.out.println("这是构造代码块");
