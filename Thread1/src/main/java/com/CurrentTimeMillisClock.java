@@ -24,3 +24,5 @@ private static final CurrentTimeMillisClock MILLIS_CLOCK = new CurrentTimeMillis
     public long now() {
         return now.get();
     }
+
+//使用CurrentTimeMillisClock.millisClock().now()获取时间戳
