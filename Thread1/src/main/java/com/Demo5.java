@@ -32,16 +32,32 @@ public class ApiTest {
     protected static final int TIMEOUT = 3000;
     protected static Long sTime;
     protected static Long eTime;
-    protected static OkHttpClient okHttpClient = new OkHttpClient.Builder()
+    protected static final int KEEP_ALIVE_DURATION = 5;
+    protected static final OkHttpClient okHttpClient = new OkHttpClient.Builder()
+            .connectionPool(new ConnectionPool(THREAD_NUM,KEEP_ALIVE_DURATION,TimeUnit.MINUTES))
             .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(TIMEOUT,TimeUnit.SECONDS)
             .writeTimeout(TIMEOUT,TimeUnit.SECONDS)
             .callTimeout(TIMEOUT,TimeUnit.SECONDS)
             .pingInterval(TIMEOUT,TimeUnit.SECONDS)
             .build();
-    //保证多线程安全
+
     private static final ThreadLocal<DateFormat> dateFormatThreadLocal =
             ThreadLocal.withInitial(() -> new SimpleDateFormat("yyy-MM-dd HH:mm:ss"));
+
+    public void executeInterfaceList(String methodName){
+        switch (methodName){
+            case "get请求":
+                getDemo();
+                break;
+            case "post请求":
+                postDemo();
+                break;
+            case "json请求":
+                postJson();
+                break;
+        }
+    }
 
     public void doIt(String methodName) {
         sTime = CurrentTimeMillisClock.millisClock().now();
@@ -55,17 +71,7 @@ public class ApiTest {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    switch (methodName) {
-                        case "get请求":
-                            getDemo();
-                            break;
-                        case "post请求":
-                            postDemo();
-                            break;
-                        case "json请求":
-                            postJson();
-                            break;
-                    }
+                   executeInterfaceList(methodName);
                     countDownLatch.countDown();
                }
            });
@@ -77,8 +83,8 @@ public class ApiTest {
             e.printStackTrace();
         }
         executorService.shutdown();
-        System.out.println("******线程池关闭******");
         eTime = CurrentTimeMillisClock.millisClock().now();
+        System.out.println("******线程池关闭******");
         System.out.println("开始时间: "+dateFormatThreadLocal.get().format(sTime));
         System.out.println("结束时间: "+dateFormatThreadLocal.get().format(eTime));
         System.out.println("总耗时: "+(float)(eTime -sTime)/1000+"秒");
@@ -146,8 +152,8 @@ public class ApiTest {
                     .build();
             long sTimes = CurrentTimeMillisClock.millisClock().now();
             Response response = okHttpClient.newCall(request).execute();
-            long eTimes = CurrentTimeMillisClock.millisClock().now();
             String result = Objects.requireNonNull(response.body()).string();
+            long eTimes = CurrentTimeMillisClock.millisClock().now();
             System.out.println("响应："+result);
             if (result.contains("\"code\":\"1\"")){
                 SUCCESS_NUM+=1;
@@ -214,6 +220,7 @@ public class ApiTest {
                 SUCCESS_NUM+=1;
             }
             respTimeList.add(eTimes - sTimes);
+            System.out.println(eTimes - sTimes);
 
         } catch (IOException e) {
             e.printStackTrace();
