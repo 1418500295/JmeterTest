@@ -67,7 +67,11 @@ public class Client1 extends WebSocketClient {
 //每条线程再执行time次
 //总执行次数为num * time次
 public static void main(String[] args) throws InterruptedException {
+        //获取当前程序运行包含的总线程数
+        Map<Thread, StackTraceElement[]> map = Thread.getAllStackTraces();
+        System.out.println(map.size());
         Thread t = null;
+    
         for (int i = 0; i < num; i++) {
             int finalI1 = i;
             t = new Thread(new Runnable() {
