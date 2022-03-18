@@ -61,3 +61,44 @@ public class Client1 extends WebSocketClient {
         client1.close();
     }
 }
+
+
+//创建线程数为num
+//每条线程再执行time次
+//总执行次数为num * time次
+public static void main(String[] args) throws InterruptedException {
+        Thread t = null;
+        for (int i = 0; i < num; i++) {
+            int finalI1 = i;
+            t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+//                    doIt();
+                    Client client = null;
+                    try {
+                        client = new Client(new URI("ws://127.0.0.1:1234"), new Draft_6455());
+                        //发起连接
+                        client.connect();
+                        while (!client.getReadyState().equals(READYSTATE.OPEN)) {
+                            System.out.println("正在连接。。。");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+                    int time = 0;
+                    while (time < 10) {
+                        Objects.requireNonNull(client).send("你好,我是第" + finalI1 + "客户端");
+                        time++;
+                    }
+                    countDownLatch.countDown();
+                }
+            });
+            Objects.requireNonNull(t).start();
+        }
+        countDownLatch.await();
+    }
