@@ -43,21 +43,13 @@ public class Client1 extends WebSocketClient {
             client1.connect();
             while (!client1.getReadyState().equals(READYSTATE.OPEN)){
                 System.out.println("正在连接。。。");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                TimeUnit.SECONDS.sleep(1);
             }
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         Objects.requireNonNull(client1).send("你好啊");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        TimeUnit.SECONDS.sleep(5);
         client1.close();
     }
 }
@@ -85,11 +77,7 @@ public static void main(String[] args) throws InterruptedException {
                         client.connect();
                         while (!client.getReadyState().equals(READYSTATE.OPEN)) {
                             System.out.println("正在连接。。。");
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            TimeUnit.SECONDS.sleep(1);
                         }
                     } catch (URISyntaxException e) {
                         e.printStackTrace();
