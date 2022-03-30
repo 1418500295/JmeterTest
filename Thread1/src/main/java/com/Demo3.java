@@ -10,6 +10,13 @@ public class Demo3 {
     private static final CountDownLatch countDownLatch = new CountDownLatch(num); //创建计数器
     private static final CountDownLatch latch = new CountDownLatch(1); //设置发令枪
     private static final int okSum = 0; //初始化成功的请求数量
+    
+    //解决SimpleDateFormat线程不安全的问题
+    private static final ThreadLocal<SimpleDateFormat>  threadLocal = new ThreadLocal<SimpleDateFormat>(){
+        protected SimpleDateFormat initialValue(){
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        }
+    };
     public void go(){
         ExecutorService executorService = Executors.newCachedThreadPool();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
