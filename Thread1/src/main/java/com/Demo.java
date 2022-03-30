@@ -12,6 +12,10 @@ public class Demo {
     }
     //饱汉模式线程安全单例模式
     private volatile static CloseableHttpClient client;
+    
+    //高并发下的计数器
+    protected static LongAdder longAdder = new LongAdder();
+    protected static AtomicInteger atomicInteger = new AtomicInteger(0);
 
 
     public static CloseableHttpClient getInstance(){
