@@ -62,5 +62,40 @@ public class Demo {
 
 
     }
+    
+    
+        
+    
+        //追加写入json文件
+        File file = new File("C:\\Users\\14185\\IdeaProjects\\myautitest\\a.json");
+        FileOutputStream fileOutputStream = new FileOutputStream(file,true);
+        JSONObject j = new JSONObject();
+        j.put("a",1);
+        j.put("b",2);
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add(j);
+        fileOutputStream.write(jsonArray.toString().getBytes(StandardCharsets.UTF_8));
+        fileOutputStream.close();
+        for (int i = 0; i < 3; i++) {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+            String line = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            while ((line = bufferedReader.readLine() ) != null){
+                stringBuilder.append(line);
+            }
+            JSONArray jsonArray1 = JSON.parseArray(stringBuilder.toString());
+            System.out.println(jsonArray1);
+
+            FileOutputStream fileOutputStream1 = new FileOutputStream(file);
+            JSONObject j1 = new JSONObject();
+            j1.put("a",1);
+            j1.put("b",2);
+//            JSONArray jsonArray2 = new JSONArray();
+            jsonArray1.add(j1);
+//            jsonArray1.addAll(jsonArray2);
+            fileOutputStream1.write(jsonArray1.toString().getBytes(StandardCharsets.UTF_8));
+            fileOutputStream1.close();
+        }
     }
 
