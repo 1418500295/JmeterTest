@@ -42,12 +42,12 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.17.3</version>
+            <version>3.19.1</version>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java-util</artifactId>
-            <version>3.17.3</version>
+            <version>3.19.1</version>
         </dependency>
              
              
@@ -58,9 +58,9 @@
                 <version>0.6.1</version>
 
                 <configuration><!-- proto文件目录 -->
-                    <protoSourceRoot>${project.basedir}/src/main/java/proto</protoSourceRoot>
+                    <protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
                     <!-- 生成的Java文件目录 -->
-                    <outputDirectory>${project.basedir}/src/main/java/result</outputDirectory>
+                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
                     <clearOutputDirectory>false</clearOutputDirectory>
                     <!--<outputDirectory>${project.build.directory}/generated-sources/protobuf</outputDirectory>-->
                 </configuration>
