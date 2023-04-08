@@ -1,6 +1,6 @@
 syntax="proto3";
 //package result;
-option java_package = "";//这里是空着的，没有
+option java_package = "result";//这里是空着的，没有
 option java_outer_classname = "NameProtobuf";//转换为.java文件后的文件名字
 message Name  {
   int32 age = 1;
