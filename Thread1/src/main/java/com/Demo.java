@@ -89,6 +89,23 @@ public class Demo {
                 break;
             }
         }
+    
+    public void print () {
+        System.out.println("———————————┬─────——──┬─────—────────┬───────────┬────────—────┬──────────——┬");
+        System.out.println("   总耗时   │  并发数  │     成功数    │   失败数    │ 平均响应时间  │    qps     │");
+        System.out.println("────——————─┼─────——──┼────────—─────┼───────────┼─────────────┼───────────—┼─");
+
+    }
+    
+    System.out.println("压测结果：");
+        print();
+        useTime = (float)(eTime -sTime)/1000;
+        winNum = succ.sum();
+        failNum =fail.sum();
+        avgResTime = avaRespTime();
+        qps = QPS();
+        System.out.printf("    %.1f   │    %s    │    %s    │    %s    │    %.3f    │    %.1f    │\n"
+                ,useTime,THREAD_NUM,winNum,failNum,avgResTime,qps);
 
 
 
