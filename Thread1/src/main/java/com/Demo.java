@@ -81,9 +81,11 @@ public class Demo {
                 System.out.println("并发数必须是正整数");
                 input = scanner.next();
                 if ((isNumber(input) && Integer.parseInt(input)>0 && isInteger(input))){
+                    THREAD_NUM = Integer.parseInt(input);
                     break;
                 }
             }else {
+                THREAD_NUM = Integer.parseInt(input);
                 break;
             }
         }
