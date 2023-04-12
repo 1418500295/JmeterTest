@@ -114,9 +114,46 @@ public class Demo {
 //        demo.run();
 //        Demo demo1 = new Demo("james",11);
 //        demo1.run();
+        
+      
 
 
 
+    }
+    
+    
+    
+    CloseableHttpClient client = HttpClients.custom()
+            .setKeepAliveStrategy(getMyStrategy())
+            .setConnectionManager(getConnectionManager())
+            .build();
 
+    public ConnectionKeepAliveStrategy getMyStrategy(){
+        ConnectionKeepAliveStrategy myStrategy = new ConnectionKeepAliveStrategy() {
+            @Override
+            public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
+                HeaderElementIterator it = new BasicHeaderElementIterator
+                        (response.headerIterator(HTTP.CONN_KEEP_ALIVE));
+                while (it.hasNext()) {
+                    HeaderElement he = it.nextElement();
+                    String param = he.getName();
+                    String value = he.getValue();
+                    if (value != null && param.equalsIgnoreCase
+                            ("timeout")) {
+                        return Long.parseLong(value) * 1000;
+                    }
+                }
+                return 60 * 1000;//如果没有约定，则默认定义时长为60s
+            }
+        };
+        return myStrategy;
+    }
+
+
+    public static PoolingHttpClientConnectionManager getConnectionManager(){
+        PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
+        connectionManager.setMaxTotal(1000);
+        connectionManager.setDefaultMaxPerRoute(500);
+        return connectionManager;
     }
 }
