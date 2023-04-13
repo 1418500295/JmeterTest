@@ -55,6 +55,8 @@ public class ApiTest {
     protected static Long sTime;
     protected static Long eTime;
     protected static final int KEEP_ALIVE_DURATION = 5;
+    static AtomicLong totalBytesSent = new AtomicLong(0L);
+
 
     protected static int execTime;
     protected static final OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -164,6 +166,7 @@ public class ApiTest {
                 ,"平均响应时间"
                 ,"50%响应时间"
                 ,"90%响应时间"
+                ,"平均请求字节大小"
                 ,"失败率"
                 ,"qps");
         printTable1.addBody(String.valueOf(String.format("%.1f",useTime))
@@ -174,6 +177,7 @@ public class ApiTest {
                 ,String.valueOf(String.format("%.3f",avgResTime))
                 ,String.valueOf(String.format("%.3f",fiftyResTime))
                 ,String.valueOf(String.format("%.3f",nintyResTime))
+                ,String.valueOf(totalBytesSent.get()/(winNum+failNum))
                 ,String.valueOf(String.format("%.2f",(float)failNum/(winNum+failNum)*100)+"%")
                 ,String.valueOf(String.format("%.1f",qps)));
 
@@ -330,6 +334,7 @@ public class ApiTest {
                 throw new RuntimeException(e);
             }
             respTimeList.add(e-s);
+            totalBytesSent.addAndGet(post.getEntity().getContentLength());
             try {
                 result = EntityUtils.toString(response.getEntity(),"utf-8");
             } catch (IOException e) {
