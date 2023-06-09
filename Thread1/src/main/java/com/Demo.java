@@ -156,4 +156,39 @@ public class Demo {
         connectionManager.setDefaultMaxPerRoute(500);
         return connectionManager;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private static final String CHAT_ID = "505";
+    private static final String TOKEN = "6123-0zU";
+
+    public static void main(String[] args) {
+        TelegramBot bot = new TelegramBot(TOKEN);
+        bot.setUpdatesListener(updates -> UpdatesListener.CONFIRMED_UPDATES_ALL, e -> {
+            if (e.response() != null) {
+                e.response().errorCode();
+                e.response().description();
+            } else {
+                e.printStackTrace();
+            }
+        });
+        File file = new File("C:ex.html");
+        SendResponse response1 = bot.execute(new SendMessage(CHAT_ID,"hello"));
+        SendResponse response = bot.execute(new SendDocument(CHAT_ID,file));
+        if (response.isOk()) {
+            System.out.println("发送成功");
+        } else {
+            System.out.println("发送失败");
+        }
+    }
 }
