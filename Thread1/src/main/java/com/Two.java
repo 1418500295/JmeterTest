@@ -63,3 +63,57 @@ try{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Override
+    public SampleResult runTest(JavaSamplerContext javaSamplerContext) {
+        SampleResult sampleResult = new SampleResult();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("", OrderRandom.getCount());
+        jsonObject.put("", OrderRandom.getTotal());
+        jsonObject.put("", 0.01);
+        jsonObject.put("", 2);
+        jsonObject.put("", OrderRandom.getOrderNo());
+        //设置显示请求数据
+        sampleResult.setSamplerData(JSON.toJSONString(jsonObject));
+        sampleResult.setSentBytes(JSON.toJSONString(jsonObject).getBytes().length);
+        //请求开始计时
+        sampleResult.sampleStart();
+        JSONObject res = HttpUtil.doPost(url, jsonObject);
+        //请求结束计时
+        sampleResult.sampleEnd();
+        System.out.println(Config.getDate()+" 响应结果: "+res);
+        if (!(res.getIntValue("code") == 200)){
+            sampleResult.setSuccessful(false);
+            sampleResult.setResponseData(JSON.toJSONString(res));
+        }else {
+//            sampleResult.setResponseOK();
+            sampleResult.setSuccessful(true);
+            sampleResult.setResponseData(JSON.toJSONString(res));
+            try {
+                String redPackData = res.getString("data");
+                String actualPack = redPackData.replace("[","");
+                String finalActualPack = actualPack.replace("]","");
+                writeData(finalActualPack);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        sampleResult.setContentType("application/json");
+        return sampleResult;
+    }
+
+
