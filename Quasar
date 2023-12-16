@@ -1,4 +1,12 @@
 //java协程使用
+
+<dependency>
+            <groupId>co.paralleluniverse</groupId>
+            <artifactId>quasar-core</artifactId>
+            <version>0.7.10</version>
+        </dependency>
+
+
 public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch  = new CountDownLatch(1000000);
         long a = System.currentTimeMillis();
