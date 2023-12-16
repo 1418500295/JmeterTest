@@ -15,6 +15,18 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class NettyClientHandler extends ChannelInboundHandlerAdapter {
+
+    public static void heartBeat(ChannelHandlerContext channelHandlerContext){
+        ScheduledExecutorService  service = Executors.newScheduledThreadPool(1);
+        service.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                ByteBuf byteBuf = Unpooled.copiedBuffer((LocalDateTime.now()+"心跳检测\n").getBytes());
+                channelHandlerContext.writeAndFlush(byteBuf);
+            }
+        },0,5, TimeUnit.SECONDS);
+    }
+    
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println(("Client,channelActive"));
@@ -48,19 +60,21 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
         IdleStateEvent event = (IdleStateEvent) evt;
         System.out.println(("Client,Idle:" + event.state()));
-        switch (event.state()) {
-            case READER_IDLE:
-                break;
-            case WRITER_IDLE:
-                ByteBuf byteBuf = Unpooled.copiedBuffer("***心跳检测***", StandardCharsets.UTF_8);
-                ctx.writeAndFlush(byteBuf);
-                break;
-            case ALL_IDLE:
-                break;
-            default:
-                super.userEventTriggered(ctx, evt);
-                break;
-        }
+        heartBeat(ctx);
+
+        // switch (event.state()) {
+        //     case READER_IDLE:
+        //         break;
+        //     case WRITER_IDLE:
+        //         ByteBuf byteBuf = Unpooled.copiedBuffer("***心跳检测***", StandardCharsets.UTF_8);
+        //         ctx.writeAndFlush(byteBuf);
+        //         break;
+        //     case ALL_IDLE:
+        //         break;
+        //     default:
+        //         super.userEventTriggered(ctx, evt);
+        //         break;
+        // }
     }
 
 
