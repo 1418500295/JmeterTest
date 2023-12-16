@@ -1,19 +1,33 @@
 package com.demo;
 
-public class One {
-  public static void main(String[] args) throws IOException {
-        Socket socket  = new Socket("127.0.0.1",1243);
+public class Client {
+  public static void heartBeat(BufferedWriter bufferedWriter){
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+        service.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    bufferedWriter.write(LocalDateTime.now()+"心跳检测\n");
+                    bufferedWriter.flush();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        },0,5, TimeUnit.SECONDS);
+    }
+  
+    public static void main(String[] args) throws IOException, InterruptedException {
+        Socket socket  = new Socket("127.0.0.1",1111);
         System.out.println("连接成功");
-        BufferedWriter bufferedWriter;
-        OutputStreamWriter outputStreamWriter;
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));;
+        heartBeat(bufferedWriter);
         BufferedReader bufferedReader;
         InputStreamReader inputStreamReader;
         while (true){
-            outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("回复");
-            bufferedWriter = new BufferedWriter(outputStreamWriter);
-            bufferedWriter.write(scanner.nextLine()+"\n");
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("回复");
+            Thread.sleep(2000);
+            bufferedWriter.write("我是客户端\n");
             bufferedWriter.flush();
             inputStreamReader = new InputStreamReader(socket.getInputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
